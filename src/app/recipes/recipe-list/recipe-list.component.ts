@@ -7,9 +7,12 @@ import { Recipe } from '../recipe';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [];
+     recipes: Recipe[] = [
+     new Recipe('Cake', 'Very Tasty', 'https://s-media-cache-ak0.pinimg.com/736x/29/ee/96/29ee96df49e02fae0ecd190bff81adbb.jpg', []),
+     new Recipe('Salad', 'Good', 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/6/17/3/FNM080109Insert030_s4x3.jpg.rend.hgtvcom.1280.960.jpeg', [])
+      ];
   @Output() recipeSelected = new EventEmitter<Recipe>();
-  recipe = new Recipe('Dummy', 'Dummy', 'http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/2j8AAOSwGYVXCsiv/$_1.JPG');
+ recipe = new Recipe('Dummy', 'Dummy', 'http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/2j8AAOSwGYVXCsiv/$_1.JPG', []);
   
   constructor() { }
 
