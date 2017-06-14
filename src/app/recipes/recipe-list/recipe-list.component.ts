@@ -14,7 +14,7 @@ export class RecipeListComponent implements OnInit {
       ];    */
     
   recipes: Recipe[] = [];
-  @Output() recipeSelected = new EventEmitter<Recipe>();
+//  @Output() recipeSelected = new EventEmitter<Recipe>();
 // recipe = new Recipe('Dummy', 'Dummy', 'http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/2j8AAOSwGYVXCsiv/$_1.JPG', []);
   
   constructor(private recipeService: RecipeService) { }
@@ -23,7 +23,7 @@ export class RecipeListComponent implements OnInit {
       this.recipes = this.recipeService.getRecipes();
   }
   
-  onSelected(recipe: Recipe){
+ /* onSelected(recipe: Recipe){
       this.recipeSelected.emit(recipe);
-  }    
+  } */    
 }
