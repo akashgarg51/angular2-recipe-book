@@ -14,6 +14,7 @@ import { ShoppingListAddComponent } from './shopping-list/shopping-list-add.comp
 import { DropdownDirective } from './dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { APP_ROUTES_PROVIDERS } from './app.routes';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { APP_ROUTES_PROVIDERS } from './app.routes';
     RecipeDetailComponent,
     ShoppingListComponent,
     ShoppingListAddComponent,
-    DropdownDirective
+    DropdownDirective,
+    ROUTER_DIRECTIVES
   ],
   imports: [
     BrowserModule,
