@@ -19,5 +19,9 @@ export class ShoppingListComponent implements OnInit {
   onSelectItem(item: Ingredient){
       this.selectedItem = item;    // We are doing this because we want to pass it to shopping list add component
   }
+    
+  onCleared() {
+      this.selectedItem = null;
+  }
 
 }
