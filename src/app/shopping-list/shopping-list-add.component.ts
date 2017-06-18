@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { Ingredient } from "../shared/ingredient";
 import { ShoppingListService } from "./shopping-list.service"
 
