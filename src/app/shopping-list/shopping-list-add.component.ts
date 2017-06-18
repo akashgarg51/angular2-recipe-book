@@ -15,6 +15,8 @@ export class ShoppingListAddComponent implements OnChanges {
   ngOnChanges(changes) {   //whenever user clicks on new item, then item will be changed/updated accordingly, so this method will be called
       if(changes.item.currentValue === null){   //That would be initial stage
           this.isAdd = true;
+          this.item = {name: null, amount:null} //We are doing this because in view we set [ngModel] = item.name which
+          //will give error because item is initially null here, so we are changing its value to some object
       } else{
           this.isAdd = false;
       }
