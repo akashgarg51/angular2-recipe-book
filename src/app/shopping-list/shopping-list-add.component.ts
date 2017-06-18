@@ -23,10 +23,11 @@ export class ShoppingListAddComponent implements OnChanges {
   }
   
   onSubmit(ingredient: Ingredient){  //As this form has name and amount so it would be of type Ingredient
+      const newIngredient = new Ingredient(ingredient.name, ingredient.amount);
       if(!this.isAdd){
-          
+          this.sls.editItem(this.item, newIngredient);
       } else{
-         this.item = new Ingredient(ingredient.name, ingredient.amount)
+         this.item = newIngredient;
          this.sls.addItem(this.item);
       } 
   }
