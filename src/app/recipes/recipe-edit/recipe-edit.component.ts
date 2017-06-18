@@ -33,7 +33,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
                     this.isNew = true;
                     this.recipe = null;
                 }
-                console.log(this.isNew);
+                this.initForm();
             }
         );
     }
@@ -42,7 +42,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
          this.subscription.unsubscribe();
     }
     
-    private initForm(isNew: boolean) {
+    private initForm() {
         let recipeName = '';
         let recipeImageUrl = ''; 
         let recipeContent = '';
@@ -50,13 +50,14 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
         
         if(!this.isNew){
             for (let i=0; i < this.recipe.ingredients.length; i++){
+                recipeIngredients.push(
                 new FormGroup({
                        name: new FormControl(this.recipe.ingredients[i].name, Validators.required),
                        amount: new FormControl(this.recipe.ingredients[i].amount, [
                        Validators.required, 
                        Validators.pattern("\\d+") //it means it should be digit, means only numbers are allowed
                        ])
-                    })
+                    }));
             }
         }
         recipeName = this.recipe.name;
