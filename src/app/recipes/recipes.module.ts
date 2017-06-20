@@ -8,6 +8,7 @@ import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 
 import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { recipesRouting } from "./recipes.routing"; 
 
 @NgModule({
     declarations: [
@@ -18,9 +19,9 @@ import { CommonModule } from "@angular/common";
         RecipeStartComponent,
         RecipeEditComponent
     ],
-    imports: [ReactiveFormsModule, CommonModule]   //Common module is added here, because we need browser module but that is only 
-    //available in add module and its components, because it don't traverse down, so we need to add it here specifically.
+    imports: [ReactiveFormsModule, CommonModule, recipesRouting]
 })
-export class RecipesModule {
+export class RecipesModule {}
 
-}
+   //Common module is added here, because we need browser module but that is only 
+    //available in add module and its components, because it don't traverse down, so we need to add it here specifically.

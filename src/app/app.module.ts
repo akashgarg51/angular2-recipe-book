@@ -7,16 +7,17 @@ import { HeaderComponent } from './header.component';
 import { DropdownDirective } from './dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from "./recipes/recipe.service"
-import { APP_ROUTES_PROVIDERS } from './app.routes';
+import { APP_ROUTES_PROVIDERS } from './app.routing';
 import { RouterModule, Routes } from '@angular/router';
 import { ShoppingListModule } from "./shopping-list/shopping-list.module";
-import { RecipesModule } from "./recipes/recipes.module"
+import { HomeComponent } from './home.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +25,7 @@ import { RecipesModule } from "./recipes/recipes.module"
     RouterModule.forRoot(
       APP_ROUTES_PROVIDERS
     ),
-    ShoppingListModule,
-    RecipesModule
+    ShoppingListModule
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
