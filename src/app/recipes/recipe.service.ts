@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Recipe } from "./recipe";
 import { Ingredient } from "../shared/ingredient";
 import { Headers, Http, Response } from "@angular/http";
@@ -7,6 +7,8 @@ import 'rxjs/Rx';
 @Injectable()  //might be needed in scenarions where we want to some service in this service, e.g. we are injecting http
 //service in this service here
 export class RecipeService {
+   recipesChanged = new EventEmitter<Recipe[]>();   //This is added in http session for refreshing the retrieval list    
+    
    private recipes: Recipe[] = [
      new Recipe('Cake', 'Very Tasty', 'https://s-media-cache-ak0.pinimg.com/736x/29/ee/96/29ee96df49e02fae0ecd190bff81adbb.jpg', [
        new Ingredient('Chocolate', 1),
@@ -53,6 +55,7 @@ export class RecipeService {
       .subscribe(
           (data: Recipe[]) => {
                this.recipes = data;
+               this.recipesChanged.emit(this.recipes);
            }
           );
   }
